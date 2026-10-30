@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Interesting Reads — a shelf of essays worth coming back to</title>
+<meta name="description" content="A slow-turning 3D shelf of essays, papers and speeches worth coming back to. Pick a topic, the rest fall away.">
+<meta name="theme-color" content="#0a0a0c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0c'/%3E%3Crect x='8' y='5' width='16' height='22' rx='1.5' fill='%23c99a2e'/%3E%3Crect x='10' y='7' width='12' height='18' fill='%23efe7d8'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<canvas id="scene" aria-hidden="true"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+
+<header class="top">
+  <h1 id="heading" aria-label="Welcome to Interesting Reads"><span id="typed"></span><span class="caret" aria-hidden="true"></span></h1>
+  <p class="sub">Essays, papers and speeches worth coming back to. Drag the shelf to turn it.</p>
+</header>
+
+<div class="controls">
+  <label class="sr" for="search">Search the shelf</label>
+  <input id="search" type="search" placeholder="What are you looking for?" autocomplete="off" spellcheck="false">
+  <button id="surprise" type="button">Surprise me</button>
+</div>
+
+<nav id="topics" class="topics" aria-label="Topics"></nav>
+
+<p id="hint" class="hint" aria-hidden="true">Click a book to open it</p>
+
+<section id="card" class="card" hidden aria-live="polite">
+  <button id="card-close" class="close" type="button" aria-label="Shelve this book">&times;</button>
+  <p class="kicker" id="card-kicker"></p>
+  <h2 id="card-title"></h2>
+  <p class="by" id="card-by"></p>
+  <p class="desc" id="card-desc"></p>
+  <div class="row">
+    <a id="card-read" class="read" href="#" target="_blank" rel="noopener">Read it &nearr;</a>
+    <button id="card-share" class="ghost" type="button">Share</button>
+  </div>
+  <div class="row nav-row">
+    <button id="card-prev" class="ghost" type="button" aria-label="Previous book">&larr; Previous</button>
+    <button id="card-next" class="ghost" type="button" aria-label="Next book">Next &rarr;</button>
+  </div>
+  <p class="note" id="card-note"></p>
+</section>
+
+<noscript><p style="position:fixed;inset:0;z-index:20;display:grid;place-items:center;padding:40px;text-align:center;color:#a8a29a;font:14px/1.6 system-ui">This shelf needs JavaScript. The full reading list is in <code>data/essays.json</code>.</p></noscript>
+<ul id="fallback" class="fallback" hidden></ul>
+<div id="toast" class="toast" hidden></div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
